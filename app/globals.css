@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-serif-luxury {
+    font-family: var(--font-cormorant), Georgia, serif;
+  }
+  .font-sans-luxury {
+    font-family: var(--font-montserrat), sans-serif;
+  }
+}
+
+:root {
+  --rival-burgundy: #3B141E;
+  --rival-burgundy-dark: #2B0C15;
+  --rival-gold: #C5A059;
+  --rival-cream: #FAF6EE;
+  --rival-card-bg: #FFFFFF;
+}
+
+body {
+  font-family: var(--font-montserrat), sans-serif;
+}

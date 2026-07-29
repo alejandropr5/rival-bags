@@ -1,0 +1,6 @@
+{
+  "name": "Rival Bags",
+  "description": "Catálogo de lujo de bolsos artesanales Rival Bags - Colección Punto Zero con filtros y carrito interactivo",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
