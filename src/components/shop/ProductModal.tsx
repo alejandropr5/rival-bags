@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { Product } from '@/types/product';
+import { Product } from '@/src/types/product';
 import { X, ShoppingBag, Check, ShieldCheck, Truck, Sparkles, MessageCircle } from 'lucide-react';
 
 interface ProductModalProps {

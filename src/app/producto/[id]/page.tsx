@@ -3,9 +3,9 @@ import { use, useState } from 'react';
 import Image from 'next/image';
 import { notFound, useRouter } from 'next/navigation';
 import { PRODUCTS } from '@/data/products';
-import { useCart } from '@/context/CartContext';
+import { useCart } from '@/src/context/CartContext';
 import { ShoppingBag, ArrowLeft, Truck, ShieldCheck, HeartHandshake, Check } from 'lucide-react';
-import { Button } from '@/components/ui/Button';
+import { Button } from '@/src/components/ui/Button';
 
 export default function FullProductPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);

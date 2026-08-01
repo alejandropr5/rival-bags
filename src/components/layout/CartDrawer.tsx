@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { CartItem } from '@/types/product';
+import { CartItem } from '@/src/types/product';
 import { X, Trash2, ShoppingBag, Plus, Minus, ArrowRight, MessageCircle, CheckCircle, Truck } from 'lucide-react';
 
 interface CartDrawerProps {

@@ -5,7 +5,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import CartDrawer from './CartDrawer';
 import ContactModal from './ContactModal';
-import { useCart } from '@/context/CartContext';
+import { useCart } from '@/src/context/CartContext';
 import { usePathname, useRouter } from 'next/navigation';
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {

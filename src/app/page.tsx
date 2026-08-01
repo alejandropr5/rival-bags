@@ -1,16 +1,16 @@
 'use client';
 
-import Hero from '@/components/sections/Hero';
-import BrandMessageBar from '@/components/sections/BrandMessageBar';
-import ProductCard from '@/components/shop/ProductCard';
-import LifestyleSection from '@/components/sections/LifestyleSection';
-import CategorySection from '@/components/sections/CategorySection';
-import WhyShopWithUs from '@/components/sections/WhyShopWithUs';
+import Hero from '@/src/components/sections/Hero';
+import BrandMessageBar from '@/src/components/sections/BrandMessageBar';
+import ProductCard from '@/src/components/shop/ProductCard';
+import LifestyleSection from '@/src/components/sections/LifestyleSection';
+import CategorySection from '@/src/components/sections/CategorySection';
+import WhyShopWithUs from '@/src/components/sections/WhyShopWithUs';
 
 import { PRODUCTS } from '@/data/products';
-import { useCart } from '@/context/CartContext';
+import { useCart } from '@/src/context/CartContext';
 import { Sparkles } from 'lucide-react';
-import { Button } from '@/components/ui/Button';
+import { Button } from '@/src/components/ui/Button';
 import { useRouter } from 'next/navigation';
 
 export default function Home() {

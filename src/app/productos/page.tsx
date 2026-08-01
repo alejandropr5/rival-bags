@@ -1,12 +1,12 @@
 'use client';
 
 import { useState, useMemo, useEffect, Suspense } from 'react';
-import SearchAndFilter from '@/components/shop/SearchAndFilter';
-import ProductCard from '@/components/shop/ProductCard';
-import ProductModal from '@/components/shop/ProductModal';
+import SearchAndFilter from '@/src/components/shop/SearchAndFilter';
+import ProductCard from '@/src/components/shop/ProductCard';
+import ProductModal from '@/src/components/shop/ProductModal';
 import { PRODUCTS } from '@/data/products';
-import { Product, SortOption } from '@/types/product';
-import { useCart } from '@/context/CartContext';
+import { Product, SortOption } from '@/src/types/product';
+import { useCart } from '@/src/context/CartContext';
 import { Sparkles, ShoppingBag } from 'lucide-react';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { Cormorant_Garamond, Montserrat } from 'next/font/google';
 import './globals.css';
-import { CartProvider } from '@/context/CartContext';
-import ClientLayout from '@/components/layout/ClientLayout';
+import { CartProvider } from '@/src/context/CartContext';
+import ClientLayout from '@/src/components/layout/ClientLayout';
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
