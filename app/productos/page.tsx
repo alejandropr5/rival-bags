@@ -46,11 +46,13 @@ function ProductosContent() {
 
   // Sync URL to state if URL changes externally
   useEffect(() => {
-    setSearchQuery(searchParams.get('q') || '');
-    setSelectedCategory(searchParams.get('category') || 'Todos');
-    const p = searchParams.get('maxPrice');
-    setMaxPrice(p ? parseInt(p, 10) : maxCatalogPrice);
-    setSortOption((searchParams.get('sort') as SortOption) || 'featured');
+    setTimeout(() => {
+      setSearchQuery(searchParams.get('q') || '');
+      setSelectedCategory(searchParams.get('category') || 'Todos');
+      const p = searchParams.get('maxPrice');
+      setMaxPrice(p ? parseInt(p, 10) : maxCatalogPrice);
+      setSortOption((searchParams.get('sort') as SortOption) || 'featured');
+    }, 0);
   }, [searchParams, maxCatalogPrice]);
 
   const filteredProducts = useMemo(() => {
@@ -88,23 +90,23 @@ function ProductosContent() {
   }, [searchQuery, selectedCategory, maxPrice, sortOption]);
 
   return (
-    <div className="bg-[#FAF6EE] min-h-screen py-16">
+    <div className="bg-[#FAF6EE] min-h-screen py-2">
       <section className="px-6 md:px-12 max-w-7xl mx-auto">
-        <div className="flex flex-col items-center mb-16 space-y-4 pt-12">
+        {/* <div className="flex flex-col items-center mb-2 space-y-4 pt-12">
           <div className="flex items-center space-x-2 text-[#C5A059]">
             <Sparkles className="w-5 h-5" />
-            <span className="font-sans-luxury text-sm tracking-[0.2em] uppercase font-semibold">
-              Colección Punto Zero
-            </span>
+              <span className="font-sans-luxury text-sm tracking-[0.2em] uppercase font-semibold">
+                Catálogo Completo
+              </span>
             <Sparkles className="w-5 h-5" />
           </div>
           <h1 className="text-4xl md:text-5xl font-serif text-[#2A181C] text-center max-w-2xl leading-tight">
             Catálogo Completo
           </h1>
-          <p className="text-[#594A42] font-sans text-center max-w-xl text-lg pt-4">
-            Explora nuestra colección de bolsos de lujo, diseñados meticulosamente y fabricados a mano en Madrid.
+          <p className="text-[#594A42] font-sans text-center max-w-xl text-lg pt-2">
+            Explora nuestra colección de bolsos de lujo, diseñados meticulosamente y fabricados a mano.
           </p>
-        </div>
+        </div> */}
 
         <div className="w-full mb-8">
           <SearchAndFilter
@@ -129,7 +131,7 @@ function ProductosContent() {
           />
         </div>
 
-        <div className="w-full">
+        <div className="w-full pb-8">
           {filteredProducts.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
               {filteredProducts.map((product) => (

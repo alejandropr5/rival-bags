@@ -5,7 +5,7 @@ import { Sparkles, Heart, Shield, Award } from 'lucide-react';
 
 export default function AboutSection() {
   return (
-    <section id="nosotras" className="bg-[#FAF6EE] py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-[#EBE3D5]">
+    <section id="nosotras" className="bg-[#FAF6EE] pb-16 pt-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         
         {/* Left: Brand Story Image */}

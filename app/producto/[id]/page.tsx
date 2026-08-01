@@ -12,12 +12,12 @@ export default function FullProductPage({ params }: { params: Promise<{ id: stri
   const product = PRODUCTS.find((p) => p.id === id);
   const router = useRouter();
 
-  if (!product) return notFound();
-
   const { addToCart } = useCart();
-  const [selectedColor, setSelectedColor] = useState<string>(product.colors[0]);
+  const [selectedColor, setSelectedColor] = useState<string>(product?.colors[0] || '');
   const [quantity, setQuantity] = useState<number>(1);
   const [addedSuccess, setAddedSuccess] = useState<boolean>(false);
+
+  if (!product) return notFound();
 
   const formatCOP = (val: number) => `$${val.toLocaleString('es-CO')} COP`;
 

@@ -1,8 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Search, User, ShoppingBag, Menu, X, Heart } from 'lucide-react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 interface NavbarProps {
   cartCount: number;
@@ -21,6 +22,26 @@ export default function Navbar({
 }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isSearchExpanded, setIsSearchExpanded] = useState(false);
+  const [searchValue, setSearchValue] = useState('');
+  const searchInputRef = useRef<HTMLInputElement>(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (isSearchExpanded && searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  }, [isSearchExpanded]);
+
+  const handleSearchSubmit = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      if (searchValue.trim()) {
+        router.push(`/productos?q=${encodeURIComponent(searchValue.trim())}`);
+        setIsSearchExpanded(false);
+        setSearchValue('');
+      }
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,14 +57,22 @@ export default function Navbar({
 
   const navLinks = [
     { name: 'INICIO', id: 'inicio' },
-    { name: 'CATÁLOGO', id: 'catalogo' },
+    { name: 'COLECCIÓN', id: 'catalogo' },
     { name: 'NOSOTRAS', id: 'nosotras' },
   ];
 
   return (
-    <header className="sticky top-0 z-40 bg-[#3B141E] text-[#FAF6EE] shadow-md transition-all duration-300 border-b border-[#4A1D29]">
+    <>
+      {/* Dark Overlay when search is expanded */}
+      {isSearchExpanded && (
+        <div 
+          className="fixed inset-0 bg-black/60 z-30 transition-opacity duration-300" 
+          onClick={() => setIsSearchExpanded(false)}
+        />
+      )}
+      <header className={`sticky top-0 z-40 bg-[#3B141E] text-[#FAF6EE] shadow-md transition-all duration-300 border-b border-[#4A1D29]`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 sm:h-24">
+        <div className={`flex items-center justify-between transition-all duration-300 ${isScrolled ? 'h-16 sm:h-20' : 'h-20 sm:h-24'}`}>
           
           {/* Left: Mobile menu toggle button */}
           <div className="flex items-center lg:hidden">
@@ -68,10 +97,14 @@ export default function Navbar({
               <Image
                 src="/images/Logo_RB_white.svg"
                 alt="Rival Bags Logo"
-                width={100}
-                height={100}
+                width={120}
+                height={120}
                 priority
-                className="h-24 w-24 sm:h-30 sm:w-30 object-contain transition-transform duration-300 group-hover:scale-105"
+                className={`object-contain transition-all duration-300 group-hover:scale-105 ${
+                  isScrolled 
+                    ? 'h-20 w-20 sm:h-24 sm:w-24' 
+                    : 'h-24 w-24 sm:h-30 sm:w-30'
+                }`}
               />
             </button>
           </div>
@@ -85,10 +118,10 @@ export default function Navbar({
                   key={link.id}
                   id={`nav-link-${link.id}`}
                   onClick={() => onNavigate(link.id)}
-                  className={`font-sans-luxury text-xs tracking-[0.18em] font-medium transition-all relative py-1 ${
+                  className={`font-sans-luxury text-xs tracking-[0.18em] font-medium transition-all relative py-1 cursor-pointer ${
                     isActive
-                      ? 'text-[#FAF6EE] font-semibold'
-                      : 'text-[#D8C2B0] hover:text-[#FAF6EE]'
+                      ? 'text-[#C5A059] font-semibold'
+                      : 'text-[#FAF6EE] hover:text-[#C5A059]'
                   }`}
                 >
                   {link.name}
@@ -102,15 +135,32 @@ export default function Navbar({
 
           {/* Right Action Icons */}
           <div className="flex items-center space-x-3 sm:space-x-5">
-            {/* Search Icon */}
-            <button
-              id="nav-search-btn"
-              onClick={onOpenSearch}
-              className="p-2 rounded-full text-[#FAF6EE] hover:text-[#C5A059] hover:bg-[#4A1D29] transition-colors focus:outline-none"
-              title="Buscar en el catálogo"
-            >
-              <Search className="w-5 h-5 stroke-[1.75]" />
-            </button>
+            {/* Search Icon / Input */}
+            <div className="relative flex items-center">
+              <div 
+                className={`overflow-hidden transition-all duration-300 ease-in-out flex items-center ${
+                  isSearchExpanded ? 'w-48 sm:w-64 opacity-100 mr-2' : 'w-0 opacity-0 mr-0'
+                }`}
+              >
+                <input
+                  ref={searchInputRef}
+                  type="text"
+                  value={searchValue}
+                  onChange={(e) => setSearchValue(e.target.value)}
+                  onKeyDown={handleSearchSubmit}
+                  placeholder="Buscar..."
+                  className="w-full bg-transparent border-b border-[#FAF6EE]/50 text-[#FAF6EE] placeholder-[#FAF6EE]/70 focus:outline-none focus:border-[#C5A059] py-1 text-sm font-sans"
+                />
+              </div>
+              <button
+                id="nav-search-btn"
+                onClick={() => isSearchExpanded ? setIsSearchExpanded(false) : setIsSearchExpanded(true)}
+                className="p-2 rounded-full text-[#FAF6EE] hover:text-[#C5A059] hover:bg-[#4A1D29] transition-colors focus:outline-none cursor-pointer"
+                title="Buscar en el catálogo"
+              >
+                {isSearchExpanded ? <X className="w-5 h-5 stroke-[1.75]" /> : <Search className="w-5 h-5 stroke-[1.75]" />}
+              </button>
+            </div>
 
             {/* Account / User Icon
             <button
@@ -126,12 +176,12 @@ export default function Navbar({
             <button
               id="nav-cart-btn"
               onClick={onOpenCart}
-              className="relative p-2 rounded-full text-[#FAF6EE] hover:text-[#C5A059] hover:bg-[#4A1D29] transition-colors focus:outline-none flex items-center justify-center group"
+              className="relative p-2 rounded-full text-[#FAF6EE] hover:text-[#C5A059] hover:bg-[#4A1D29] transition-colors focus:outline-none flex items-center justify-center group cursor-pointer"
               title="Ver Carrito de Compras"
             >
               <ShoppingBag className="w-5 h-5 stroke-[1.75]" />
               {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-[#C5A059] text-[#2B0C15] text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-[#3B141E] shadow-sm transform group-hover:scale-110 transition-transform">
+                <span className="absolute -top-1 -right-1 bg-white group-hover:bg-[#C5A059] text-[#2B0C15] text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-[#3B141E] shadow-sm transform group-hover:scale-110 transition-transform">
                   {cartCount}
                 </span>
               )}
@@ -163,5 +213,6 @@ export default function Navbar({
         </div>
       )}
     </header>
+    </>
   );
 }
