@@ -1,4 +1,4 @@
-import { PRODUCTS } from '@/data/products';
+import { PRODUCTS } from '@data/products';
 import { notFound } from 'next/navigation';
 import InterceptedModalClient from './InterceptedModalClient';
 

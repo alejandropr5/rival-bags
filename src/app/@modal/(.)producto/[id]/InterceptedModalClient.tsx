@@ -1,9 +1,9 @@
 'use client';
 
-import ProductModal from '@/src/components/shop/ProductModal';
+import ProductModal from '@/components/shop/ProductModal';
 import { useRouter } from 'next/navigation';
-import { useCart } from '@/src/context/CartContext';
-import { Product } from '@/src/types/product';
+import { useCart } from '@/context/CartContext';
+import { Product } from '@/types/product';
 
 export default function InterceptedModalClient({ product }: { product: Product }) {
   const router = useRouter();

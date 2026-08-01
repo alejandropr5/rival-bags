@@ -1,6 +1,6 @@
 'use client';
 
-import AboutSection from '@/src/components/sections/AboutSection';
+import AboutSection from '@/components/sections/AboutSection';
 import { Sparkles } from 'lucide-react';
 
 export default function NosotrasPage() {

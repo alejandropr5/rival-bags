@@ -1,8 +1,8 @@
 'use client';
 
 import { Filter, ChevronDown, X } from 'lucide-react';
-import { CATEGORIES } from '@/data/products';
-import { SortOption } from '@/src/types/product';
+import { CATEGORIES } from '@data/products';
+import { SortOption } from '@/types/product';
 
 interface SearchAndFilterProps {
   searchQuery: string;

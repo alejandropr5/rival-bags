@@ -2,10 +2,10 @@
 import { use, useState } from 'react';
 import Image from 'next/image';
 import { notFound, useRouter } from 'next/navigation';
-import { PRODUCTS } from '@/data/products';
-import { useCart } from '@/src/context/CartContext';
+import { PRODUCTS } from '@data/products';
+import { useCart } from '@/context/CartContext';
 import { ShoppingBag, ArrowLeft, Truck, ShieldCheck, HeartHandshake, Check } from 'lucide-react';
-import { Button } from '@/src/components/ui/Button';
+import { Button } from '@/components/ui/Button';
 
 export default function FullProductPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
@@ -93,7 +93,7 @@ export default function FullProductPage({ params }: { params: Promise<{ id: stri
                 Color Seleccionado: <span className="text-[#8C7A6B]">{selectedColor}</span>
               </label>
               <div className="flex flex-wrap gap-2">
-                {product.colors.map((color) => (
+                {product.colors.map((color: string) => (
                   <button
                     key={color}
                     type="button"

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { Product } from '@/src/types/product';
+import { Product } from '@/types/product';
 import { X, ShoppingBag, Check, ShieldCheck, Truck, Sparkles, MessageCircle } from 'lucide-react';
 
 interface ProductModalProps {
@@ -210,7 +210,7 @@ export default function ProductModal({
             {showMoreDetailsBtn && (
               <a
                 href={`/producto/${product.id}`}
-                className="w-full py-3 px-6 border border-[#3B141E] text-[#3B141E] hover:bg-[#3B141E] hover:text-[#FAF6EE] font-sans-luxury text-xs font-medium tracking-wider rounded-sm transition-colors flex items-center justify-center gap-2 cursor-pointer mt-2 block text-center"
+                className="w-full py-3 px-6 border border-[#3B141E] text-[#3B141E] hover:bg-[#3B141E] hover:text-[#FAF6EE] font-sans-luxury text-xs font-medium tracking-wider rounded-sm transition-colors items-center justify-center gap-2 cursor-pointer mt-2 block text-center"
               >
                 VER MÁS DETALLES
               </a>
