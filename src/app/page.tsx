@@ -55,7 +55,7 @@ export default function Home() {
           <Button 
             variant="outline" 
             className="px-8 py-3"
-            onClick={() => router.push('/productos')}
+            onClick={() => router.push('/products')}
           >
             {t('viewAllBtn')}
           </Button>

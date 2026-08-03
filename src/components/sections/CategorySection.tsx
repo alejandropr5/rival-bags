@@ -28,7 +28,7 @@ export default function CategorySection() {
         {categories.map((cat) => (
           <div
             key={cat.name}
-            onClick={() => router.push(`/productos?category=${encodeURIComponent(cat.name)}`)}
+            onClick={() => router.push(`/products?category=${encodeURIComponent(cat.name)}`)}
             className="group relative aspect-square sm:aspect-[4/5] rounded-xl overflow-hidden shadow-sm border border-brand-border-light cursor-pointer bg-white"
           >
             <Image

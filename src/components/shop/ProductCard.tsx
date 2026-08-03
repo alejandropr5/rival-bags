@@ -26,7 +26,7 @@ export default function ProductCard({
     >
       {/* Whole Card Link (Hard Navigation to bypass interceptor) */}
       <a 
-        href={`/producto/${product.id}`} 
+        href={`/product/${product.id}`} 
         className="absolute inset-0 z-0" 
         title={product.name}
       />
@@ -46,7 +46,7 @@ export default function ProductCard({
         <div className="absolute inset-x-0 bottom-0 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20">
           <Link
             id={`quick-view-btn-${product.id}`}
-            href={`/producto/${product.id}`}
+            href={`/product/${product.id}`}
             scroll={false}
             className="w-full py-3 bg-brand-burgundy/60 backdrop-blur-sm text-brand-cream font-sans-luxury text-xs font-semibold tracking-widest uppercase flex items-center justify-center gap-2 hover:bg-brand-burgundy-dark/70 transition-colors"
           >

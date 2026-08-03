@@ -219,7 +219,7 @@ export default function ProductModal({
 
             {showMoreDetailsBtn && (
               <a
-                href={`/producto/${product.id}`}
+                href={`/product/${product.id}`}
                 className="w-full py-3 px-6 border border-brand-burgundy text-brand-burgundy hover:bg-brand-burgundy hover:text-brand-cream font-sans-luxury text-xs font-medium tracking-wider rounded-sm transition-colors items-center justify-center gap-2 cursor-pointer mt-2 block text-center"
               >
                 {tProduct('moreDetailsBtn')}

@@ -11,12 +11,12 @@ import { Sparkles, ShoppingBag } from 'lucide-react';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
-function ProductosContent() {
+function ProductsContent() {
   const { addToCart } = useCart();
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
-  const t = useTranslations('productosPage');
+  const t = useTranslations('productsPage');
 
   // Min and Max catalog prices calculation
   const catalogPrices = PRODUCTS.map((p) => p.price);
@@ -168,11 +168,11 @@ function ProductosContent() {
   );
 }
 
-export default function ProductosPage() {
-  const t = useTranslations('productosPage');
+export default function ProductsPage() {
+  const t = useTranslations('productsPage');
   return (
     <Suspense fallback={<div className="min-h-screen bg-brand-cream flex items-center justify-center"><div className="font-sans-luxury tracking-[0.2em] text-brand-burgundy uppercase text-sm">{t('loadingFallback')}</div></div>}>
-      <ProductosContent />
+      <ProductsContent />
     </Suspense>
   );
 }

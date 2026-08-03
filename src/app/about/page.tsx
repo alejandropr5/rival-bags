@@ -3,7 +3,7 @@
 import AboutSection from '@/components/sections/AboutSection';
 import { Sparkles } from 'lucide-react';
 
-export default function NosotrasPage() {
+export default function AboutPage() {
   return (
     <div className="bg-brand-cream min-h-screen pt-24 pb-16">
       {/* <div className="px-6 md:px-12 max-w-7xl mx-auto mb-16">

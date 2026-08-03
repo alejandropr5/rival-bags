@@ -189,7 +189,7 @@
     "sortNameAsc": "Nombre (A-Z)",
     "showingResults": "Mostrando {count} de {total} productos"
   },
-  "productosPage": {
+  "productsPage": {
     "loadingFallback": "Cargando catálogo...",
     "noResultsTitle": "No se encontraron bolsos en esta búsqueda.",
     "noResultsHint": "Prueba ajustando los filtros o usando otros términos de búsqueda.",

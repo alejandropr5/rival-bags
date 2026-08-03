@@ -8,7 +8,7 @@ export default function AboutSection() {
   const t = useTranslations('about');
 
   return (
-    <section id="nosotras" className="bg-brand-cream pb-16 pt-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="about" className="bg-brand-cream pb-16 pt-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         
         {/* Left: Brand Story Image */}

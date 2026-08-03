@@ -41,7 +41,7 @@ export default function Hero() {
           <div className="pt-2 sm:pt-4">
             <button
               id="hero-explore-btn"
-              onClick={() => router.push('/productos')}
+              onClick={() => router.push('/products')}
               className="inline-block px-8 py-3.5 bg-brand-cream-light text-brand-burgundy hover:bg-brand-cream font-sans-luxury text-xs tracking-[0.2em] font-medium uppercase rounded-sm shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 border border-brand-cream"
             >
               {t('ctaButton')}

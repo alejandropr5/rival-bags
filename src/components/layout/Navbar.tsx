@@ -38,7 +38,7 @@ export default function Navbar({
   const handleSearchSubmit = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       if (searchValue.trim()) {
-        router.push(`/productos?q=${encodeURIComponent(searchValue.trim())}`);
+        router.push(`/products?q=${encodeURIComponent(searchValue.trim())}`);
         setIsSearchExpanded(false);
         setSearchValue('');
       }
