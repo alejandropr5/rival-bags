@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { X, MessageCircle, Mail, MapPin, Phone, Send, Check } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -9,6 +10,7 @@ interface ContactModalProps {
 }
 
 export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
+  const t = useTranslations('contactModal');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -31,14 +33,14 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
   return (
     <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4">
       <div 
-        className="bg-white max-w-2xl w-full rounded-2xl shadow-2xl border border-[#EBE3D5] overflow-hidden relative animate-scale-up"
+        className="bg-white max-w-2xl w-full rounded-2xl shadow-2xl border border-brand-border-light overflow-hidden relative animate-scale-up"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           id="close-contact-modal-btn"
           type="button"
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 p-2 rounded-full bg-[#FAF6EE] text-[#3B141E] hover:bg-[#3B141E] hover:text-white transition-colors"
+          className="absolute top-4 right-4 z-10 p-2 rounded-full bg-brand-cream text-brand-burgundy hover:bg-brand-burgundy hover:text-white transition-colors"
         >
           <X className="w-5 h-5" />
         </button>
@@ -46,36 +48,36 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
         <div className="grid grid-cols-1 md:grid-cols-5">
           
           {/* Left info column */}
-          <div className="md:col-span-2 bg-[#3B141E] text-[#FAF6EE] p-6 sm:p-8 space-y-6 flex flex-col justify-between">
+          <div className="md:col-span-2 bg-brand-burgundy text-brand-cream p-6 sm:p-8 space-y-6 flex flex-col justify-between">
             <div className="space-y-3">
-              <span className="font-sans-luxury text-[10px] text-[#C5A059] uppercase tracking-widest font-semibold block">
-                ATENCIÓN PERSONALIZADA
+              <span className="font-sans-luxury text-[10px] text-brand-gold uppercase tracking-widest font-semibold block">
+                {t('attentionBadge')}
               </span>
-              <h3 className="font-serif-luxury text-2xl font-bold text-[#FAF6EE]">
-                Contacto Rival Bags
+              <h3 className="font-serif-luxury text-2xl font-bold text-brand-cream">
+                {t('title')}
               </h3>
-              <p className="font-sans-luxury text-xs text-[#D8C2B0] leading-relaxed">
-                Estamos aquí para asesorarte en la elección del bolso ideal o responder cualquier duda sobre la Colección Punto Zero.
+              <p className="font-sans-luxury text-xs text-brand-border-gold leading-relaxed">
+                {t('description')}
               </p>
             </div>
 
-            <div className="space-y-4 font-sans-luxury text-xs text-[#EAE0D5]">
+            <div className="space-y-4 font-sans-luxury text-xs text-brand-border-soft">
               <div className="flex items-center space-x-3">
-                <MessageCircle className="w-4 h-4 text-[#C5A059] shrink-0" />
-                <span>WhatsApp: +57 300 000 0000</span>
+                <MessageCircle className="w-4 h-4 text-brand-gold shrink-0" />
+                <span>{t('whatsapp')}</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="w-4 h-4 text-[#C5A059] shrink-0" />
-                <span>contacto@rivalbags.com</span>
+                <Mail className="w-4 h-4 text-brand-gold shrink-0" />
+                <span>{t('email')}</span>
               </div>
               <div className="flex items-center space-x-3">
-                <MapPin className="w-4 h-4 text-[#C5A059] shrink-0" />
-                <span>Showroom: El Poblado, Medellín</span>
+                <MapPin className="w-4 h-4 text-brand-gold shrink-0" />
+                <span>{t('showroom')}</span>
               </div>
             </div>
 
-            <div className="pt-2 text-[10px] text-[#C5A059]">
-              Horario: Lunes a Sábado de 9:00 am a 7:00 pm
+            <div className="pt-2 text-[10px] text-brand-gold">
+              {t('schedule')}
             </div>
           </div>
 
@@ -86,61 +88,61 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center">
                   <Check className="w-6 h-6" />
                 </div>
-                <h4 className="font-serif-luxury text-xl font-bold text-[#3B141E]">
-                  ¡Mensaje Enviado!
+                <h4 className="font-serif-luxury text-xl font-bold text-brand-burgundy">
+                  {t('sentTitle')}
                 </h4>
-                <p className="font-sans-luxury text-xs text-[#8C7A6B]">
-                  Te responderemos a la brevedad posible. Gracias por escribir a Rival Bags.
+                <p className="font-sans-luxury text-xs text-brand-text-light">
+                  {t('sentMessage')}
                 </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4 font-sans-luxury text-xs">
-                <h4 className="font-serif-luxury text-xl font-semibold text-[#2A181C]">
-                  Escríbenos un Mensaje
+                <h4 className="font-serif-luxury text-xl font-semibold text-brand-ink">
+                  {t('formTitle')}
                 </h4>
 
                 <div>
-                  <label className="block text-[#6B5848] font-semibold mb-1">Nombre Completo *</label>
+                  <label className="block text-brand-text-subtle font-semibold mb-1">{t('labelName')}</label>
                   <input
                     type="text"
                     required
-                    placeholder="Tu nombre"
+                    placeholder={t('placeholderName')}
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full px-3 py-2 bg-[#FAF6EE] border border-[#E0D5C1] rounded-md focus:outline-none focus:ring-1 focus:ring-[#3B141E]"
+                    className="w-full px-3 py-2 bg-brand-cream border border-brand-border-input rounded-md focus:outline-none focus:ring-1 focus:ring-brand-burgundy"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-[#6B5848] font-semibold mb-1">Correo Electrónico *</label>
+                  <label className="block text-brand-text-subtle font-semibold mb-1">{t('labelEmail')}</label>
                   <input
                     type="email"
                     required
-                    placeholder="tu@correo.com"
+                    placeholder={t('placeholderEmail')}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-3 py-2 bg-[#FAF6EE] border border-[#E0D5C1] rounded-md focus:outline-none focus:ring-1 focus:ring-[#3B141E]"
+                    className="w-full px-3 py-2 bg-brand-cream border border-brand-border-input rounded-md focus:outline-none focus:ring-1 focus:ring-brand-burgundy"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-[#6B5848] font-semibold mb-1">Mensaje o Consulta *</label>
+                  <label className="block text-brand-text-subtle font-semibold mb-1">{t('labelMessage')}</label>
                   <textarea
                     required
                     rows={3}
-                    placeholder="¿En qué bolso estás interesada? ¿Tienes alguna consulta especial?"
+                    placeholder={t('placeholderMessage')}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    className="w-full px-3 py-2 bg-[#FAF6EE] border border-[#E0D5C1] rounded-md focus:outline-none focus:ring-1 focus:ring-[#3B141E]"
+                    className="w-full px-3 py-2 bg-brand-cream border border-brand-border-input rounded-md focus:outline-none focus:ring-1 focus:ring-brand-burgundy"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-3 bg-[#3B141E] hover:bg-[#2B0C15] text-[#FAF6EE] font-bold tracking-widest uppercase rounded-sm transition-colors flex items-center justify-center gap-2"
+                  className="w-full py-3 bg-brand-burgundy hover:bg-brand-burgundy-dark text-brand-cream font-bold tracking-widest uppercase rounded-sm transition-colors flex items-center justify-center gap-2"
                 >
                   <Send className="w-3.5 h-3.5" />
-                  ENVIAR MENSAJE
+                  {t('sendButton')}
                 </button>
               </form>
             )}

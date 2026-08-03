@@ -10,11 +10,11 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     
     let variantClass = ""
     if (variant === 'primary') {
-      variantClass = "bg-[#3B141E] text-[#FAF6EE] hover:bg-[#2B0C15]"
+      variantClass = "bg-brand-burgundy text-brand-cream hover:bg-brand-burgundy-dark"
     } else if (variant === 'secondary') {
-      variantClass = "bg-[#F5EFE6] text-[#3B141E] hover:bg-[#FAF6EE] border border-[#FAF6EE] shadow-lg hover:shadow-xl"
+      variantClass = "bg-brand-cream-light text-brand-burgundy hover:bg-brand-cream border border-brand-cream shadow-lg hover:shadow-xl"
     } else if (variant === 'outline') {
-      variantClass = "border border-[#3B141E] text-[#3B141E] hover:bg-[#3B141E] hover:text-[#FAF6EE]"
+      variantClass = "border border-brand-burgundy text-brand-burgundy hover:bg-brand-burgundy hover:text-brand-cream"
     }
 
     return (

@@ -14,13 +14,13 @@ export function Modal({ isOpen, onClose, children, className = '' }: ModalProps)
   return (
     <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4">
       <div 
-        className={`bg-white rounded-2xl shadow-2xl border border-[#EBE3D5] overflow-hidden relative animate-scale-up ${className}`}
+        className={`bg-white rounded-2xl shadow-2xl border border-brand-border-light overflow-hidden relative animate-scale-up ${className}`}
         onClick={(e) => e.stopPropagation()}
       >
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-4 right-4 z-20 p-2 rounded-full bg-[#FAF6EE] text-[#3B141E] hover:bg-[#3B141E] hover:text-white transition-colors shadow-xs"
+          className="absolute top-4 right-4 z-20 p-2 rounded-full bg-brand-cream text-brand-burgundy hover:bg-brand-burgundy hover:text-white transition-colors shadow-xs"
         >
           <X className="w-5 h-5" />
         </button>

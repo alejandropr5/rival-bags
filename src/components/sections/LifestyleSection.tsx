@@ -1,40 +1,43 @@
 'use client';
 
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 export default function LifestyleSection() {
+  const t = useTranslations('lifestyleSection');
+
   const photos = [
     {
       src: '/images/lifestyle_bar.jpg',
-      alt: 'Noche de cocteles con Rival Bag',
-      title: 'Noches Elegantes',
+      alt: t('photos.bar.alt'),
+      title: t('photos.bar.title'),
     },
     {
       src: '/images/lifestyle_brunch.jpg',
-      alt: 'Brunch al aire libre con amigas',
-      title: 'Encuentros de Sol',
+      alt: t('photos.brunch.alt'),
+      title: t('photos.brunch.title'),
     },
     {
       src: '/images/lifestyle_street.jpg',
-      alt: 'Paseo urbano de lujo',
-      title: 'Estilo Urbano',
+      alt: t('photos.street.alt'),
+      title: t('photos.street.title'),
     },
     {
       src: '/images/lifestyle_dining.jpg',
-      alt: 'Cena gourmet exclusiva',
-      title: 'Momentos Unicos',
+      alt: t('photos.dining.alt'),
+      title: t('photos.dining.title'),
     },
   ];
 
   return (
-    <section className="bg-[#FAF6EE] py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center border-t border-[#EBE3D5]">
+    <section className="bg-brand-cream py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center border-t border-brand-border-light">
       
       {/* Golden Luxury Heading */}
       <div className="mb-10 space-y-2">
-        <h2 className="font-serif-luxury text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#C5A059] tracking-wider uppercase">
-          LIFESTYLE & INSPIRATION
+        <h2 className="font-serif-luxury text-3xl sm:text-4xl lg:text-5xl font-semibold text-brand-gold tracking-wider uppercase">
+          {t('heading')}
         </h2>
-        <div className="w-16 h-0.5 bg-[#C5A059] mx-auto opacity-60" />
+        <div className="w-16 h-0.5 bg-brand-gold mx-auto opacity-60" />
       </div>
 
       {/* 4 Image Grid */}
@@ -42,7 +45,7 @@ export default function LifestyleSection() {
         {photos.map((item, index) => (
           <div
             key={index}
-            className="group relative h-64 sm:h-72 rounded-xl overflow-hidden shadow-sm border border-[#EBE3D5] cursor-pointer"
+            className="group relative h-64 sm:h-72 rounded-xl overflow-hidden shadow-sm border border-brand-border-light cursor-pointer"
           >
             <Image
               src={item.src}
@@ -57,10 +60,10 @@ export default function LifestyleSection() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
 
             <div className="absolute bottom-4 left-4 right-4 text-left">
-              <span className="font-sans-luxury text-[11px] text-[#E8D7C3] uppercase tracking-widest block font-medium">
-                Punto Zero
+              <span className="font-sans-luxury text-[11px] text-brand-text-warm uppercase tracking-widest block font-medium">
+                {t('collectionLabel')}
               </span>
-              <h3 className="font-serif-luxury text-lg text-[#FAF6EE] font-semibold tracking-wide">
+              <h3 className="font-serif-luxury text-lg text-brand-cream font-semibold tracking-wide">
                 {item.title}
               </h3>
             </div>

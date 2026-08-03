@@ -1,0 +1,30 @@
+:root {
+  /* Palette Colors */
+  --brand-burgundy: #3B141E;
+  --brand-burgundy-dark: #2B0C15;
+  --brand-burgundy-light: #4A1D29;
+  --brand-burgundy-accent: #8B1E3F;
+  --brand-gold: #C5A059;
+  --brand-cream: #FAF6EE;
+  --brand-cream-light: #F5EFE6;
+  --brand-cream-ultralight: #F9F7F2;
+  --brand-ink: #2A181C;
+  --brand-text-muted: #594A42;
+  --brand-text-secondary: #5C493B;
+  --brand-text-subtle: #6B5848;
+  --brand-text-light: #8C7A6B;
+  --brand-text-caption: #A89280;
+  --brand-text-warm: #E8D7C3;
+  --brand-border-light: #EBE3D5;
+  --brand-border-input: #E0D5C1;
+  --brand-border-divider: #F2EBDC;
+  --brand-border-soft: #EAE0D5;
+  --brand-border-gold: #D8C2B0;
+  --brand-whatsapp: #25D366;
+  --brand-whatsapp-dark: #128C7E;
+  --brand-whatsapp-hover: #20ba59;
+
+  /* Typography */
+  --font-serif-luxury: var(--font-cormorant), Georgia, serif;
+  --font-sans-luxury: var(--font-montserrat), sans-serif;
+}

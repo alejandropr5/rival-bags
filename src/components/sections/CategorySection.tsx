@@ -2,8 +2,10 @@
 
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 export default function CategorySection() {
+  const t = useTranslations('categorySection');
   const router = useRouter();
   
   const categories = [
@@ -14,12 +16,12 @@ export default function CategorySection() {
   ];
 
   return (
-    <section className="bg-[#FAF6EE] py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center border-t border-[#EBE3D5]">
+    <section className="bg-brand-cream py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center border-t border-brand-border-light">
       <div className="mb-10 space-y-2">
-        <h2 className="font-serif-luxury text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#3B141E] tracking-wider uppercase">
-          Comprar por Categorías
+        <h2 className="font-serif-luxury text-3xl sm:text-4xl lg:text-5xl font-semibold text-brand-burgundy tracking-wider uppercase">
+          {t('title')}
         </h2>
-        <div className="w-16 h-0.5 bg-[#C5A059] mx-auto opacity-60" />
+        <div className="w-16 h-0.5 bg-brand-gold mx-auto opacity-60" />
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -27,7 +29,7 @@ export default function CategorySection() {
           <div
             key={cat.name}
             onClick={() => router.push(`/productos?category=${encodeURIComponent(cat.name)}`)}
-            className="group relative aspect-square sm:aspect-[4/5] rounded-xl overflow-hidden shadow-sm border border-[#EBE3D5] cursor-pointer bg-white"
+            className="group relative aspect-square sm:aspect-[4/5] rounded-xl overflow-hidden shadow-sm border border-brand-border-light cursor-pointer bg-white"
           >
             <Image
               src={cat.image}
@@ -38,7 +40,7 @@ export default function CategorySection() {
             />
             <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
             <div className="absolute bottom-6 left-0 right-0 text-center">
-              <span className="inline-block px-6 py-2.5 bg-white/95 backdrop-blur-md text-[#3B141E] font-sans-luxury text-xs font-semibold tracking-widest uppercase rounded-sm shadow-lg">
+              <span className="inline-block px-6 py-2.5 bg-white/95 backdrop-blur-md text-brand-burgundy font-sans-luxury text-xs font-semibold tracking-widest uppercase rounded-sm shadow-lg">
                 {cat.name}
               </span>
             </div>

@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Search, User, ShoppingBag, Menu, X, Heart } from 'lucide-react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 interface NavbarProps {
   cartCount: number;
@@ -20,6 +21,7 @@ export default function Navbar({
   onNavigate,
   activeSection,
 }: NavbarProps) {
+  const t = useTranslations('navbar');
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isSearchExpanded, setIsSearchExpanded] = useState(false);
@@ -56,9 +58,9 @@ export default function Navbar({
   }, []);
 
   const navLinks = [
-    { name: 'INICIO', id: 'inicio' },
-    { name: 'COLECCIÓN', id: 'catalogo' },
-    { name: 'NOSOTRAS', id: 'nosotras' },
+    { name: t('links.inicio'), id: 'inicio' },
+    { name: t('links.coleccion'), id: 'catalogo' },
+    { name: t('links.nosotras'), id: 'nosotras' },
   ];
 
   return (
@@ -70,9 +72,9 @@ export default function Navbar({
           onClick={() => setIsSearchExpanded(false)}
         />
       )}
-      <header className={`sticky top-0 z-40 bg-[#3B141E] text-[#FAF6EE] shadow-md transition-all duration-300 border-b border-[#4A1D29]`}>
+      <header className={`sticky top-0 z-40 bg-brand-burgundy text-brand-cream shadow-md transition-all duration-300 border-b border-brand-burgundy-light`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`flex items-center justify-between transition-all duration-300 ${isScrolled ? 'h-16 sm:h-20' : 'h-20 sm:h-24'}`}>
+        <div className={`flex items-center justify-between transition-all duration-300 ${isScrolled ? 'h-10 sm:h-14' : 'h14 sm:h-18'}`}>
           
           {/* Left: Mobile menu toggle button */}
           <div className="flex items-center lg:hidden">
@@ -80,8 +82,8 @@ export default function Navbar({
               id="mobile-menu-btn"
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-md text-[#FAF6EE] hover:bg-[#4A1D29] focus:outline-none transition"
-              aria-label="Abrir menú"
+              className="p-2 rounded-md text-brand-cream hover:bg-brand-burgundy-light focus:outline-none transition"
+              aria-label={t('ariaOpenMenu')}
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -96,14 +98,14 @@ export default function Navbar({
             >
               <Image
                 src="/images/Logo_RB_white.svg"
-                alt="Rival Bags Logo"
+                alt={t('logoAlt')}
                 width={120}
                 height={120}
                 priority
                 className={`object-contain transition-all duration-300 group-hover:scale-105 ${
                   isScrolled 
-                    ? 'h-20 w-20 sm:h-24 sm:w-24' 
-                    : 'h-24 w-24 sm:h-30 sm:w-30'
+                    ? 'h-16 w-16 sm:h-22 sm:w-22' 
+                    : 'h-20 w-20 sm:h-26 sm:w-26'
                 }`}
               />
             </button>
@@ -120,13 +122,13 @@ export default function Navbar({
                   onClick={() => onNavigate(link.id)}
                   className={`font-sans-luxury text-xs tracking-[0.18em] font-medium transition-all relative py-1 cursor-pointer ${
                     isActive
-                      ? 'text-[#C5A059] font-semibold'
-                      : 'text-[#FAF6EE] hover:text-[#C5A059]'
+                      ? 'text-brand-gold font-semibold'
+                      : 'text-brand-cream hover:text-brand-gold'
                   }`}
                 >
                   {link.name}
                   {isActive && (
-                    <span className="absolute bottom-0 left-0 w-full h-[1.5px] bg-[#C5A059] rounded-full" />
+                    <span className="absolute bottom-0 left-0 w-full h-[1.5px] bg-brand-gold rounded-full" />
                   )}
                 </button>
               );
@@ -148,40 +150,30 @@ export default function Navbar({
                   value={searchValue}
                   onChange={(e) => setSearchValue(e.target.value)}
                   onKeyDown={handleSearchSubmit}
-                  placeholder="Buscar..."
-                  className="w-full bg-transparent border-b border-[#FAF6EE]/50 text-[#FAF6EE] placeholder-[#FAF6EE]/70 focus:outline-none focus:border-[#C5A059] py-1 text-sm font-sans"
+                  placeholder={t('searchPlaceholder')}
+                  className="w-full bg-transparent border-b border-brand-cream/50 text-brand-cream placeholder-brand-cream/70 focus:outline-none focus:border-brand-gold py-1 text-sm font-sans"
                 />
               </div>
               <button
                 id="nav-search-btn"
                 onClick={() => isSearchExpanded ? setIsSearchExpanded(false) : setIsSearchExpanded(true)}
-                className="p-2 rounded-full text-[#FAF6EE] hover:text-[#C5A059] hover:bg-[#4A1D29] transition-colors focus:outline-none cursor-pointer"
-                title="Buscar en el catálogo"
+                className="p-2 rounded-full text-brand-cream hover:text-brand-gold hover:bg-brand-burgundy-light transition-colors focus:outline-none cursor-pointer"
+                title={t('searchTitle')}
               >
                 {isSearchExpanded ? <X className="w-5 h-5 stroke-[1.75]" /> : <Search className="w-5 h-5 stroke-[1.75]" />}
               </button>
             </div>
 
-            {/* Account / User Icon
-            <button
-              id="nav-user-btn"
-              onClick={() => onNavigate('contacto')}
-              className="p-2 rounded-full text-[#FAF6EE] hover:text-[#C5A059] hover:bg-[#4A1D29] transition-colors focus:outline-none hidden sm:inline-flex"
-              title="Mi cuenta / Contacto"
-            >
-              <User className="w-5 h-5 stroke-[1.75]" />
-            </button> */}
-
             {/* Shopping Cart Icon with Badge */}
             <button
               id="nav-cart-btn"
               onClick={onOpenCart}
-              className="relative p-2 rounded-full text-[#FAF6EE] hover:text-[#C5A059] hover:bg-[#4A1D29] transition-colors focus:outline-none flex items-center justify-center group cursor-pointer"
-              title="Ver Carrito de Compras"
+              className="relative p-2 rounded-full text-brand-cream hover:text-brand-gold hover:bg-brand-burgundy-light transition-colors focus:outline-none flex items-center justify-center group cursor-pointer"
+              title={t('cartTitle')}
             >
               <ShoppingBag className="w-5 h-5 stroke-[1.75]" />
               {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-white group-hover:bg-[#C5A059] text-[#2B0C15] text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-[#3B141E] shadow-sm transform group-hover:scale-110 transition-transform">
+                <span className="absolute -top-1 -right-1 bg-white group-hover:bg-brand-gold text-brand-burgundy-dark text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-brand-burgundy shadow-sm transform group-hover:scale-110 transition-transform">
                   {cartCount}
                 </span>
               )}
@@ -192,7 +184,7 @@ export default function Navbar({
 
       {/* Mobile Drawer Navigation */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#2B0C15] border-t border-[#4A1D29] px-6 py-6 space-y-4">
+        <div className="lg:hidden bg-brand-burgundy-dark border-t border-brand-burgundy-light px-6 py-6 space-y-4">
           {navLinks.map((link) => (
             <button
               key={link.id}
@@ -201,14 +193,14 @@ export default function Navbar({
                 onNavigate(link.id);
                 setMobileMenuOpen(false);
               }}
-              className="block w-full text-left font-sans-luxury text-sm tracking-[0.2em] text-[#FAF6EE] hover:text-[#C5A059] py-2 border-b border-[#3B141E]"
+              className="block w-full text-left font-sans-luxury text-sm tracking-[0.2em] text-brand-cream hover:text-brand-gold py-2 border-b border-brand-burgundy"
             >
               {link.name}
             </button>
           ))}
-          <div className="pt-2 flex items-center justify-between text-xs text-[#C5A059]">
-            <span>Envíos a toda Colombia 🇨🇴</span>
-            <span>Atención Personalizada</span>
+          <div className="pt-2 flex items-center justify-between text-xs text-brand-gold">
+            <span>{t('mobileShipping')}</span>
+            <span>{t('mobileAttention')}</span>
           </div>
         </div>
       )}

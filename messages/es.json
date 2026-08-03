@@ -1,0 +1,222 @@
+{
+  "notFound": {
+    "title": "404 - Página no encontrada",
+    "message": "El producto o la página que buscas no existe o ha sido movida.",
+    "backButton": "Volver al Catálogo"
+  },
+  "metadata": {
+    "title": "Rival Bags",
+    "description": "Catálogo oficial de Rival Bags. Bolsos artesanales tejidos individualmente, donde el diseño contemporáneo y la artesanía se encuentran."
+  },
+  "navbar": {
+    "ariaOpenMenu": "Abrir menú",
+    "logoAlt": "Rival Bags Logo",
+    "links": {
+      "inicio": "INICIO",
+      "coleccion": "COLECCIÓN",
+      "nosotras": "NOSOTRAS"
+    },
+    "searchPlaceholder": "Buscar...",
+    "searchTitle": "Buscar en el catálogo",
+    "cartTitle": "Ver Carrito de Compras",
+    "mobileShipping": "Envíos a toda Colombia 🇨🇴",
+    "mobileAttention": "Atención Personalizada"
+  },
+  "hero": {
+    "imageAlt": "Rival Bags Hero Banner",
+    "title1": "EL LUJO DE LO",
+    "title2": "IRREPETIBLE",
+    "collectionLabel": "Colección Inaugural:",
+    "collectionName": "PUNTO ZERO",
+    "ctaButton": "EXPLORAR LA COLECCIÓN"
+  },
+  "brandMessageBar": {
+    "brandName": "Rival Bags:",
+    "message": "Donde el diseño contemporáneo y la artesanía se encuentran para crear piezas únicas, tejidas individualmente. Cada bolso es un punto focal para tu estilo, diseñado para captar miradas."
+  },
+  "home": {
+    "featuredBadge": "Colección Destacada",
+    "featuredTitle": "Nuestros Diseños Más Icónicos",
+    "viewAllBtn": "Ver Colección Completa"
+  },
+  "footer": {
+    "logoAlt": "Rival Bags Logo",
+    "navCatalog": "Catálogo",
+    "navNosotras": "Nosotras",
+    "instagramTitle": "Instagram",
+    "whatsappTitle": "WhatsApp",
+    "copyright": "© {year} Rival Bags · Todos los derechos reservados"
+  },
+  "cart": {
+    "title": "TU CARRITO",
+    "freeShippingBefore": "Te faltan",
+    "freeShippingAfter": "para envío gratis",
+    "freeShippingReached": "¡Felicidades! Tienes Envío Gratis 🇨🇴",
+    "emptyTitle": "Tu carrito está vacío",
+    "emptyMessage": "Explora la Colección Punto Zero y descubre piezas únicas hechas a mano.",
+    "emptyButton": "VER PRODUCTOS",
+    "itemColor": "Color:",
+    "removeItemTitle": "Eliminar del carrito",
+    "subtotal": "Subtotal ({count} items)",
+    "estimatedShipping": "Envío estimado",
+    "shippingFree": "GRATIS",
+    "shippingCost": "$12,000 COP",
+    "estimatedTotal": "Total Estimado",
+    "whatsappButton": "PEDIR DIRECTO POR WHATSAPP",
+    "checkoutButton": "PROCEDER AL PAGO"
+  },
+  "checkout": {
+    "title": "Datos de Envío & Pago",
+    "subtitle": "Ingresa tus datos para procesar el pedido simulado.",
+    "labelName": "Nombre Completo *",
+    "placeholderName": "Ej. Sofía Mendoza",
+    "labelPhone": "Teléfono WhatsApp *",
+    "placeholderPhone": "Ej. +57 300 123 4567",
+    "labelCity": "Ciudad *",
+    "placeholderCity": "Ej. Medellín",
+    "labelAddress": "Dirección *",
+    "placeholderAddress": "Ej. Cra 43A # 1-50",
+    "paymentMethodLabel": "Método de Pago Seleccionado:",
+    "paymentMethodValue": "PSE / Nequi / Tarjeta de Crédito (Simulación Segura)",
+    "confirmButton": "CONFIRMAR PAGO DE {amount}",
+    "confirmedTitle": "¡Pedido Confirmado!",
+    "confirmedMessage": "Gracias {name}, hemos recibido tu orden. Te enviaremos la guía de rastreo a tu teléfono: {phone}.",
+    "confirmedTagline": "Rival Bags - El Lujo de lo Irrepetible"
+  },
+  "contactModal": {
+    "attentionBadge": "ATENCIÓN PERSONALIZADA",
+    "title": "Contacto Rival Bags",
+    "description": "Estamos aquí para asesorarte en la elección del bolso ideal o responder cualquier duda sobre la Colección Punto Zero.",
+    "whatsapp": "WhatsApp: +57 300 000 0000",
+    "email": "contacto@rivalbags.com",
+    "showroom": "Showroom: El Poblado, Medellín",
+    "schedule": "Horario: Lunes a Sábado de 9:00 am a 7:00 pm",
+    "formTitle": "Escríbenos un Mensaje",
+    "labelName": "Nombre Completo *",
+    "placeholderName": "Tu nombre",
+    "labelEmail": "Correo Electrónico *",
+    "placeholderEmail": "tu@correo.com",
+    "labelMessage": "Mensaje o Consulta *",
+    "placeholderMessage": "¿En qué bolso estás interesada? ¿Tienes alguna consulta especial?",
+    "sendButton": "ENVIAR MENSAJE",
+    "sentTitle": "¡Mensaje Enviado!",
+    "sentMessage": "Te responderemos a la brevedad posible. Gracias por escribir a Rival Bags."
+  },
+  "about": {
+    "imageAlt": "Artesanía y diseño Rival Bags",
+    "imageBadge": "Hecho a Mano en Colombia 🇨🇴",
+    "imageTitle": "Manos Maestras, Historias Tejidas",
+    "badge": "NUESTRA ESENCIA",
+    "title": "Donde la tradición textil abraza la vanguardia del lujo",
+    "paragraph1Before": "En ",
+    "paragraph1Brand": "Rival Bags",
+    "paragraph1After": ", cada bolso es concebido como una obra de arte portátil. Nacimos de la pasión por dignificar el saber hacer artesanal colombiano, fusionándolo con siluetas geométricas contemporáneas y una paleta cromática sofisticada.",
+    "paragraph2Before": "Nuestra colección inaugural, ",
+    "paragraph2Collection": "PUNTO ZERO",
+    "paragraph2After": ", celebra el origen de cada hebra. Cada nudo representa horas de dedicación minuciosa por parte de mujeres artesanas, garantizando que nunca existan dos bolsos idénticos.",
+    "pillar1Title": "Unicidad Absoluta",
+    "pillar1Desc": "Cada pieza posee personalidad irrepetible.",
+    "pillar2Title": "Impacto Consciente",
+    "pillar2Desc": "Comercio justo con artesanas locales.",
+    "pillar3Title": "Calidad Premium",
+    "pillar3Desc": "Cordones de alta resistencia duraderos.",
+    "pillar4Title": "Sello de Autor",
+    "pillar4Desc": "Certificado de autenticidad en cada envío."
+  },
+  "categorySection": {
+    "title": "Comprar por Categorías"
+  },
+  "lifestyleSection": {
+    "heading": "LIFESTYLE & INSPIRATION",
+    "collectionLabel": "Punto Zero",
+    "photos": {
+      "bar": {
+        "alt": "Noche de cocteles con Rival Bag",
+        "title": "Noches Elegantes"
+      },
+      "brunch": {
+        "alt": "Brunch al aire libre con amigas",
+        "title": "Encuentros de Sol"
+      },
+      "street": {
+        "alt": "Paseo urbano de lujo",
+        "title": "Estilo Urbano"
+      },
+      "dining": {
+        "alt": "Cena gourmet exclusiva",
+        "title": "Momentos Únicos"
+      }
+    }
+  },
+  "whyShopWithUs": {
+    "title": "¿Por qué elegir Rival Bags?",
+    "feature1Title": "Envíos a Nivel Nacional",
+    "feature1Desc": "Entregas seguras a toda Colombia. Gratis por compras superiores a $200.000 COP.",
+    "feature2Title": "Artesanía 100% Colombiana",
+    "feature2Desc": "Cada pieza es tejida a mano por artesanas expertas, garantizando exclusividad y calidad.",
+    "feature3Title": "Pagos 100% Seguros",
+    "feature3Desc": "Múltiples medios de pago con la más alta seguridad para proteger tus datos.",
+    "feature4Title": "Diseño Único",
+    "feature4Desc": "Producción limitada (Punto Zero). No encontrarás dos bolsos exactamente iguales."
+  },
+  "productCard": {
+    "quickViewBtn": "VISTA RÁPIDA"
+  },
+  "productModal": {
+    "handmadeBadge": "Pieza artesanal 100% tejida a mano",
+    "newBadge": "Colección Punto Zero",
+    "colorLabel": "Color seleccionado:",
+    "dimensionsLabel": "Dimensiones:",
+    "materialsLabel": "Materiales & Acabados:",
+    "quantityLabel": "Cantidad:",
+    "addToCartBtn": "AÑADIR AL CARRITO ({price})",
+    "addedToCartBtn": "¡AGREGADO AL CARRITO!",
+    "whatsappBtn": "CONSULTAR POR WHATSAPP",
+    "moreDetailsBtn": "VER MÁS DETALLES",
+    "badgeShipping": "Envíos a nivel nacional 🇨🇴",
+    "badgeHandcraft": "Garantía de artesanía 100%"
+  },
+  "searchAndFilter": {
+    "titleDefault1": "Explorar Colección",
+    "titleDefault2": "De Piezas Únicas",
+    "titleSearch": "RESULTADOS PARA \"{query}\"",
+    "clearSearch": "borrar búsqueda",
+    "filters": "Filtros",
+    "sortBy": "Ordenar por:",
+    "sortFeatured": "Destacados",
+    "sortPriceAsc": "Menor Precio",
+    "sortPriceDesc": "Mayor Precio",
+    "sortNameAsc": "Nombre (A-Z)",
+    "showingResults": "Mostrando {count} de {total} productos"
+  },
+  "productosPage": {
+    "loadingFallback": "Cargando catálogo...",
+    "noResultsTitle": "No se encontraron bolsos en esta búsqueda.",
+    "noResultsHint": "Prueba ajustando los filtros o usando otros términos de búsqueda.",
+    "clearFilters": "Limpiar Filtros"
+  },
+  "productDetailPage": {
+    "backButton": "Volver",
+    "newBadge": "Punto Zero",
+    "materialLabel": "Material:",
+    "dimensionsLabel": "Dimensiones:",
+    "colorLabel": "Color Seleccionado:",
+    "quantityLabel": "Cantidad:",
+    "addToCartBtn": "AÑADIR AL CARRITO",
+    "addedToCartBtn": "AÑADIDO AL CARRITO",
+    "inquiryBtn": "CONSULTAR DISPONIBILIDAD",
+    "badgeShipping": "Envío Nacional",
+    "badgeHandcraft": "Artesanía Local",
+    "badgePayment": "Pago Seguro"
+  },
+  "whatsapp": {
+    "cartGreeting": "Hola Rival Bags 🌸, deseo realizar el siguiente pedido:",
+    "cartItemLine": "• *{name}* ({color}) x{quantity} = ${price} COP",
+    "cartTotalLine": "*Total a Pagar:* ${total} COP",
+    "cartShippingLine": "*Envío:* {shipping}",
+    "cartShippingFree": "¡GRATIS a toda Colombia!",
+    "cartShippingConvenir": "A convenir",
+    "cartClosing": "Quedo atenta a las instrucciones de pago. ¡Gracias!",
+    "productInquiry": "Hola Rival Bags 🌸, estoy interesada en el bolso *{name}* en color *{color}* (${price} COP). ¿Tienen disponibilidad inmediata?"
+  }
+}

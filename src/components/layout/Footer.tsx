@@ -3,18 +3,21 @@
 import Image from 'next/image';
 import { Instagram, MessageCircle } from 'lucide-react';
 import { BRAND_CONSTANTS } from '@/lib/constants';
+import { useTranslations } from 'next-intl';
 
 interface FooterProps {
   onNavigate: (sectionId: string) => void;
 }
 
 export default function Footer({ onNavigate }: FooterProps) {
+  const t = useTranslations('footer');
+
   return (
-    <footer className="bg-[#3B141E] text-[#FAF6EE] pt-16 pb-8 border-t border-[#4A1D29]">
+    <footer className="bg-brand-burgundy text-brand-cream pt-16 pb-8 border-t border-brand-burgundy-light">
       <div className="max-w-4xl mx-auto px-6 sm:px-8">
         
         {/* Main Section */}
-        <div className="flex flex-col items-center justify-center space-y-2 pb-12 border-b border-[#4A1D29]">
+        <div className="flex flex-col items-center justify-center space-y-2 pb-12 border-b border-brand-burgundy-light">
           
           {/* Logo */}
           <button
@@ -24,7 +27,7 @@ export default function Footer({ onNavigate }: FooterProps) {
           >
             <Image
               src="/images/Logo_RB_white.svg"
-              alt="Rival Bags Logo"
+              alt={t('logoAlt')}
               width={160}
               height={160}
               priority
@@ -37,17 +40,17 @@ export default function Footer({ onNavigate }: FooterProps) {
             <li>
               <button
                 onClick={() => onNavigate('catalogo')}
-                className="hover:text-[#C5A059] transition-colors cursor-pointer"
+                className="hover:text-brand-gold transition-colors cursor-pointer"
               >
-                Catálogo
+                {t('navCatalog')}
               </button>
             </li>
             <li>
               <button
                 onClick={() => onNavigate('nosotras')}
-                className="hover:text-[#C5A059] transition-colors cursor-pointer"
+                className="hover:text-brand-gold transition-colors cursor-pointer"
               >
-                Nosotras
+                {t('navNosotras')}
               </button>
             </li>
           </ul>
@@ -58,8 +61,8 @@ export default function Footer({ onNavigate }: FooterProps) {
               href={BRAND_CONSTANTS.INSTAGRAM_URL}
               target="_blank"
               rel="noreferrer"
-              className="w-10 h-10 rounded-full border border-[#D8C2B0] flex items-center justify-center text-[#FAF6EE] hover:bg-[#C5A059] hover:border-[#C5A059] hover:text-[#2B0C15] transition-all"
-              title="Instagram"
+              className="w-10 h-10 rounded-full border border-brand-border-gold flex items-center justify-center text-brand-cream hover:bg-brand-gold hover:border-brand-gold hover:text-brand-burgundy-dark transition-all"
+              title={t('instagramTitle')}
             >
               <Instagram className="w-[18px] h-[18px]" />
             </a>
@@ -67,8 +70,8 @@ export default function Footer({ onNavigate }: FooterProps) {
               href={BRAND_CONSTANTS.WHATSAPP_URL}
               target="_blank"
               rel="noreferrer"
-              className="w-10 h-10 rounded-full border border-[#D8C2B0] flex items-center justify-center text-[#FAF6EE] hover:bg-[#25D366] hover:border-[#25D366] hover:text-white transition-all"
-              title="WhatsApp"
+              className="w-10 h-10 rounded-full border border-brand-border-gold flex items-center justify-center text-brand-cream hover:bg-brand-whatsapp hover:border-brand-whatsapp hover:text-white transition-all"
+              title={t('whatsappTitle')}
             >
               <MessageCircle className="w-[18px] h-[18px]" />
             </a>
@@ -77,8 +80,8 @@ export default function Footer({ onNavigate }: FooterProps) {
 
         {/* Copyright Bar */}
         <div className="pt-8 text-center flex flex-col items-center">
-          <p className="font-sans-luxury text-[11px] text-[#A89280] tracking-wider uppercase">
-            © {new Date().getFullYear()} Rival Bags · Todos los derechos reservados
+          <p className="font-sans-luxury text-[11px] text-brand-text-caption tracking-wider uppercase">
+            {t('copyright', { year: new Date().getFullYear() })}
           </p>
         </div>
 

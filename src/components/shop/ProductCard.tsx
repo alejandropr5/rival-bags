@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Product } from '@/types/product';
 import { Eye } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 interface ProductCardProps {
   product: Product;
@@ -13,6 +14,8 @@ interface ProductCardProps {
 export default function ProductCard({
   product,
 }: ProductCardProps) {
+  const t = useTranslations('productCard');
+
   const formatCOP = (val: number) =>
     `$${val.toLocaleString('es-CO')} COP`;
 
@@ -29,7 +32,7 @@ export default function ProductCard({
       />
 
       {/* Top Image Container */}
-      <div className="relative w-full aspect-square bg-[#FAF6EE] overflow-hidden flex items-center justify-center p-4">
+      <div className="relative w-full aspect-square bg-brand-cream overflow-hidden flex items-center justify-center p-4">
         <Image
           src={product.image}
           alt={product.name}
@@ -45,10 +48,10 @@ export default function ProductCard({
             id={`quick-view-btn-${product.id}`}
             href={`/producto/${product.id}`}
             scroll={false}
-            className="w-full py-3 bg-[#3B141E]/60 backdrop-blur-sm text-[#FAF6EE] font-sans-luxury text-xs font-semibold tracking-widest uppercase flex items-center justify-center gap-2 hover:bg-[#2B0C15]/70 transition-colors"
+            className="w-full py-3 bg-brand-burgundy/60 backdrop-blur-sm text-brand-cream font-sans-luxury text-xs font-semibold tracking-widest uppercase flex items-center justify-center gap-2 hover:bg-brand-burgundy-dark/70 transition-colors"
           >
             <Eye className="w-4 h-4" />
-            VISTA RÁPIDA
+            {t('quickViewBtn')}
           </Link>
         </div>
       </div>
@@ -56,15 +59,12 @@ export default function ProductCard({
       {/* Product Details Box */}
       <div className="p-5 text-left flex flex-col flex-1 justify-between space-y-2 bg-white pointer-events-none">
         <div>
-          <h3 className="font-serif-luxury text-l sm:text-xl text-[#2A181C] font-bold tracking-tight leading-snug">
+          <h3 className="font-serif-luxury text-l sm:text-xl text-brand-ink font-bold tracking-tight leading-snug">
             {product.name}
           </h3>
-          {/* <p className="font-sans-luxury text-[10px] sm:text-xs text-[#8C7A6B] mt-1 uppercase tracking-wider">
-            {product.colors.length} {product.colors.length === 1 ? 'color' : 'colores'}
-          </p> */}
         </div>
 
-        <p className="font-sans-luxury text-sm font-medium text-[#594A42] tracking-wide">
+        <p className="font-sans-luxury text-sm font-medium text-brand-text-muted tracking-wide">
           {formatCOP(product.price)}
         </p>
       </div>

@@ -9,12 +9,14 @@ import { Product, SortOption } from '@/types/product';
 import { useCart } from '@/context/CartContext';
 import { Sparkles, ShoppingBag } from 'lucide-react';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 function ProductosContent() {
   const { addToCart } = useCart();
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
+  const t = useTranslations('productosPage');
 
   // Min and Max catalog prices calculation
   const catalogPrices = PRODUCTS.map((p) => p.price);
@@ -90,20 +92,20 @@ function ProductosContent() {
   }, [searchQuery, selectedCategory, maxPrice, sortOption]);
 
   return (
-    <div className="bg-[#FAF6EE] min-h-screen py-2">
+    <div className="bg-brand-cream min-h-screen py-2">
       <section className="px-6 md:px-12 max-w-7xl mx-auto">
         {/* <div className="flex flex-col items-center mb-2 space-y-4 pt-12">
-          <div className="flex items-center space-x-2 text-[#C5A059]">
+          <div className="flex items-center space-x-2 text-brand-gold">
             <Sparkles className="w-5 h-5" />
               <span className="font-sans-luxury text-sm tracking-[0.2em] uppercase font-semibold">
                 Catálogo Completo
               </span>
             <Sparkles className="w-5 h-5" />
           </div>
-          <h1 className="text-4xl md:text-5xl font-serif text-[#2A181C] text-center max-w-2xl leading-tight">
+          <h1 className="text-4xl md:text-5xl font-serif text-brand-ink text-center max-w-2xl leading-tight">
             Catálogo Completo
           </h1>
-          <p className="text-[#594A42] font-sans text-center max-w-xl text-lg pt-2">
+          <p className="text-brand-text-muted font-sans text-center max-w-xl text-lg pt-2">
             Explora nuestra colección de bolsos de lujo, diseñados meticulosamente y fabricados a mano.
           </p>
         </div> */}
@@ -143,10 +145,10 @@ function ProductosContent() {
               ))}
             </div>
           ) : (
-            <div className="py-24 flex flex-col items-center justify-center text-center space-y-4 bg-white/50 rounded-2xl border border-[#EBE3D5]">
-              <ShoppingBag className="w-16 h-16 text-[#C5A059] opacity-50" />
-              <p className="font-serif text-2xl text-[#2A181C]">No se encontraron bolsos en esta búsqueda.</p>
-              <p className="font-sans text-[#594A42]">Prueba ajustando los filtros o usando otros términos de búsqueda.</p>
+            <div className="py-24 flex flex-col items-center justify-center text-center space-y-4 bg-white/50 rounded-2xl border border-brand-border-light">
+              <ShoppingBag className="w-16 h-16 text-brand-gold opacity-50" />
+              <p className="font-serif text-2xl text-brand-ink">{t('noResultsTitle')}</p>
+              <p className="font-sans text-brand-text-muted">{t('noResultsHint')}</p>
               <button 
                 onClick={() => {
                   setSearchQuery('');
@@ -154,9 +156,9 @@ function ProductosContent() {
                   setMaxPrice(maxCatalogPrice);
                   setSortOption('featured');
                 }}
-                className="mt-4 font-sans-luxury text-xs font-semibold tracking-wider text-[#3B141E] uppercase hover:text-[#C5A059] transition-colors"
+                className="mt-4 font-sans-luxury text-xs font-semibold tracking-wider text-brand-burgundy uppercase hover:text-brand-gold transition-colors"
               >
-                Limpiar Filtros
+                {t('clearFilters')}
               </button>
             </div>
           )}
@@ -167,8 +169,9 @@ function ProductosContent() {
 }
 
 export default function ProductosPage() {
+  const t = useTranslations('productosPage');
   return (
-    <Suspense fallback={<div className="min-h-screen bg-[#FAF6EE] flex items-center justify-center"><div className="font-sans-luxury tracking-[0.2em] text-[#3B141E] uppercase text-sm">Cargando catálogo...</div></div>}>
+    <Suspense fallback={<div className="min-h-screen bg-brand-cream flex items-center justify-center"><div className="font-sans-luxury tracking-[0.2em] text-brand-burgundy uppercase text-sm">{t('loadingFallback')}</div></div>}>
       <ProductosContent />
     </Suspense>
   );

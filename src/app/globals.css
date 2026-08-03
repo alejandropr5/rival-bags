@@ -1,4 +1,35 @@
 @import "tailwindcss";
+@config "../../tailwind.config.cjs";
+@import "../styles/brand.css";
+
+@theme {
+  --color-brand-burgundy: var(--brand-burgundy);
+  --color-brand-burgundy-dark: var(--brand-burgundy-dark);
+  --color-brand-burgundy-light: var(--brand-burgundy-light);
+  --color-brand-burgundy-accent: var(--brand-burgundy-accent);
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-cream: var(--brand-cream);
+  --color-brand-cream-light: var(--brand-cream-light);
+  --color-brand-cream-ultralight: var(--brand-cream-ultralight);
+  --color-brand-ink: var(--brand-ink);
+  --color-brand-text-muted: var(--brand-text-muted);
+  --color-brand-text-secondary: var(--brand-text-secondary);
+  --color-brand-text-subtle: var(--brand-text-subtle);
+  --color-brand-text-light: var(--brand-text-light);
+  --color-brand-text-caption: var(--brand-text-caption);
+  --color-brand-text-warm: var(--brand-text-warm);
+  --color-brand-border-light: var(--brand-border-light);
+  --color-brand-border-input: var(--brand-border-input);
+  --color-brand-border-divider: var(--brand-border-divider);
+  --color-brand-border-soft: var(--brand-border-soft);
+  --color-brand-border-gold: var(--brand-border-gold);
+  --color-brand-whatsapp: var(--brand-whatsapp);
+  --color-brand-whatsapp-dark: var(--brand-whatsapp-dark);
+  --color-brand-whatsapp-hover: var(--brand-whatsapp-hover);
+
+  --font-serif-luxury: var(--font-cormorant), Georgia, serif;
+  --font-sans-luxury: var(--font-montserrat), sans-serif;
+}
 
 @layer utilities {
   .font-serif-luxury {
@@ -7,14 +38,6 @@
   .font-sans-luxury {
     font-family: var(--font-montserrat), sans-serif;
   }
-}
-
-:root {
-  --rival-burgundy: #3B141E;
-  --rival-burgundy-dark: #2B0C15;
-  --rival-gold: #C5A059;
-  --rival-cream: #FAF6EE;
-  --rival-card-bg: #FFFFFF;
 }
 
 body {
