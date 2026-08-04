@@ -9,11 +9,11 @@ export default function Hero() {
   const t = useTranslations('hero');
 
   return (
-    <section id="inicio" className="relative w-full h-[82vh] min-h-[520px] max-h-[780px] overflow-hidden bg-brand-burgundy-dark">
+    <section id="home" className="relative w-full h-[82vh] min-h-[520px] max-h-[780px] overflow-hidden bg-brand-burgundy-dark">
       {/* Background Hero Image */}
-      <div className="absolute inset-0 transition-transform duration-1000 scale-100 hover:scale-105">
+      <div className="absolute inset-0">
         <Image
-          src="/images/lifestyle_street.jpg"
+          src='/images/hero_banner.png'
           alt={t('imageAlt')}
           fill
           priority

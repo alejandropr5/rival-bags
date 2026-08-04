@@ -58,9 +58,9 @@ export default function Navbar({
   }, []);
 
   const navLinks = [
-    { name: t('links.inicio'), id: 'inicio' },
-    { name: t('links.coleccion'), id: 'catalogo' },
-    { name: t('links.nosotras'), id: 'nosotras' },
+    { name: t('links.home'), id: 'home' },
+    { name: t('links.products'), id: 'products' },
+    { name: t('links.about'), id: 'about' },
   ];
 
   return (
@@ -72,9 +72,9 @@ export default function Navbar({
           onClick={() => setIsSearchExpanded(false)}
         />
       )}
-      <header className={`sticky top-0 z-40 bg-brand-burgundy text-brand-cream shadow-md transition-all duration-300 border-b border-brand-burgundy-light`}>
+      <header className="sticky top-0 z-40 bg-brand-burgundy text-brand-cream shadow-md transition-all duration-300 border-b border-brand-burgundy-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`flex items-center justify-between transition-all duration-300 ${isScrolled ? 'h-10 sm:h-14' : 'h14 sm:h-18'}`}>
+        <div className="flex items-center justify-between transition-all duration-300 h-14">
           
           {/* Left: Mobile menu toggle button */}
           <div className="flex items-center lg:hidden">
@@ -90,23 +90,19 @@ export default function Navbar({
           </div>
 
           {/* Logo Brand */}
-          <div className="flex-1 lg:flex-none flex justify-center lg:justify-start">
+          <div className="flex-1 lg:flex-none flex justify-center lg:justify-start h-full py-1.5">
             <button
               id="brand-logo-btn"
-              onClick={() => onNavigate('inicio')}
+              onClick={() => onNavigate('home')}
               className="group flex items-center justify-center cursor-pointer focus:outline-none"
             >
               <Image
                 src="/images/Logo_RB_white.svg"
                 alt={t('logoAlt')}
-                width={120}
-                height={120}
+                width={1635}
+                height={977}
                 priority
-                className={`object-contain transition-all duration-300 group-hover:scale-105 ${
-                  isScrolled 
-                    ? 'h-16 w-16 sm:h-22 sm:w-22' 
-                    : 'h-20 w-20 sm:h-26 sm:w-26'
-                }`}
+                className="object-contain transition-all duration-300 group-hover:scale-105 w-auto h-full"
               />
             </button>
           </div>

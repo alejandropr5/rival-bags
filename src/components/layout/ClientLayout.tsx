@@ -31,19 +31,15 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       return;
     }
     
-    if (sectionId === 'inicio') {
+    if (sectionId === 'home') {
       router.push('/');
-    } else if (sectionId === 'catalogo' || sectionId === 'punto-zero') {
-      router.push('/productos');
-    } else if (sectionId === 'nosotras') {
-      router.push('/nosotras');
     } else {
       router.push(`/${sectionId}`);
     }
   };
 
   const handleOpenSearch = () => {
-    router.push('/productos');
+    router.push('/products');
     // We could pass a query param or just navigate
   };
 
@@ -54,7 +50,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
         onOpenCart={() => setIsCartOpen(true)}
         onOpenSearch={handleOpenSearch}
         onNavigate={handleNavigate}
-        activeSection={pathname === '/' ? 'inicio' : pathname === '/productos' ? 'catalogo' : pathname === '/nosotras' ? 'nosotras' : ''}
+        activeSection={pathname === '/' ? 'home' : pathname === '/products' ? 'products' : pathname === '/about' ? 'about' : ''}
       />
       <main className="flex-1">
         {children}

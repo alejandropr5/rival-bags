@@ -12,9 +12,9 @@
     "ariaOpenMenu": "Abrir menú",
     "logoAlt": "Rival Bags Logo",
     "links": {
-      "inicio": "INICIO",
-      "coleccion": "COLECCIÓN",
-      "nosotras": "NOSOTRAS"
+      "home": "INICIO",
+      "products": "COLECCIÓN",
+      "about": "NOSOTRAS"
     },
     "searchPlaceholder": "Buscar...",
     "searchTitle": "Buscar en el catálogo",
@@ -177,7 +177,7 @@
     "badgeHandcraft": "Garantía de artesanía 100%"
   },
   "searchAndFilter": {
-    "titleDefault1": "Explorar Colección",
+    "titleDefault1": "Explora Nuestra Colección",
     "titleDefault2": "De Piezas Únicas",
     "titleSearch": "RESULTADOS PARA \"{query}\"",
     "clearSearch": "borrar búsqueda",
